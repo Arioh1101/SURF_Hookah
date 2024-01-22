@@ -18,7 +18,7 @@ window.onscroll = function() {
         zVals[i] += delta * -0.75
         let frame = frames[i],
                 transform = `translateZ(${zVals[i]}px)`,
-                opacity = zVals[i] < Math.abs(zSpacing) / 1 ? 1 : 0
+                opacity = zVals[i] < Math.abs(zSpacing) / 1.5 ? 1 : 0
         frame.setAttribute('style', `transform : ${transform}; opacity: ${opacity}`)
     })
 
@@ -36,16 +36,3 @@ ScroolSmoother.create({
     wrapper: '.wrapper',
     content: '.content'
 })
-
-
-
-// window.addEventListener('scroll', function() {
-//     const caveImage = document.querySelector('.cave-image');
-//     if (window.scrollY > 100) { // Замените это значение на желаемую точку, когда изображение должно выезжать
-//       caveImage.style.position = 'fixed';
-//       caveImage.style.top = '0';
-//     } else {
-//       caveImage.style.position = 'absolute';
-//       caveImage.style.top = '100vh';
-//     }
-//   });
